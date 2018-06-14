@@ -154,6 +154,7 @@
  		number_job = document.querySelectorAll('li').length;
 		number_job -= number_complete;
  		number_complete = 0;
+
  		document.querySelector('.number_job').textContent = number_job; 
  		document.querySelector('.number_complete').textContent = number_complete; 
  		clear(document.querySelectorAll('li'), 'checked');
@@ -170,12 +171,21 @@
  		if( clicks %2 == 1){
 	 		for (var i = 0; i < li.length ; i++) {
 	 			li[i].classList.add('checked');
+	 			
 	 		}
+	 		number_active = 0;
+	 		document.querySelector('.number_active').textContent = number_active; 
+	 		number_complete = document.querySelectorAll('li').length;
+	 		document.querySelector('.number_complete').textContent = number_complete; 
 	 		show_clear_button();
  		}else{
  			for (var i = 0; i < li.length ; i++) {
 	 			li[i].classList.remove('checked');
 	 		}
+	 		number_active = document.querySelectorAll('li').length;
+	 		document.querySelector('.number_active').textContent = number_active; 
+	 		number_complete = 0;
+	 		document.querySelector('.number_complete').textContent = number_complete; 
 	 		show_clear_button();
  		}
 	})
