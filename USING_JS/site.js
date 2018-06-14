@@ -63,9 +63,8 @@
   		ev.target.classList.toggle('checked');
   		//show clear button:
   		show_clear_button()
-   		
 		//number of compeleted job
- 		var number_complete = document.querySelectorAll('.checked').length;		
+ 		number_complete = document.querySelectorAll('.checked').length;	
  	 	document.querySelector('.number_complete').textContent = number_complete;
  		// // number of active job
  		number_active = number_job - number_complete;
@@ -79,6 +78,7 @@
  			//delete job, number_job -1
  			ev.target.parentElement.remove();
  			number_job -= 1;
+
  	 		document.querySelector('.number_job').textContent = number_job;
  		}
  	})
@@ -151,12 +151,12 @@
 		remove_all_button_color();
  		document.querySelector('.all').classList.add('button_color');
 
+ 		number_job = document.querySelectorAll('li').length;
 		number_job -= number_complete;
  		number_complete = 0;
  		document.querySelector('.number_job').textContent = number_job; 
  		document.querySelector('.number_complete').textContent = number_complete; 
  		clear(document.querySelectorAll('li'), 'checked');
-
 
 	})
 	//CHECK ALL
