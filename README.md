@@ -8,7 +8,7 @@
    <li> Phân loại: đã hoàn thành, đang làm </li>
    <li> Xóa tất cả , check tất cả việc </li>
  </ul>
- <ul> Thực hiện  bởi: Dương Minh Nam <ul>
+ <ul> Thực hiện  bởi: Dương Minh Nam </ul>
 ## Liên Kết
  <ul> [JQUERY](https://duongnam99.github.io/ToDoList-DuongMinhNam/USING_JQUERY/) </ul>
  <ul> [NON-JQUERY](https://duongnam99.github.io/ToDoList-DuongMinhNam/USING_JS/) </ul>
