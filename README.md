@@ -1,7 +1,14 @@
-### ToDoList-DuongMinhNam
-- 2 phiên bản:
-  <ul> 
-    <li>phiên bản dùng thư viện hỗ  trợ (jquery): USING_JQUERY 
-    <li> phiên bản js thuần: USING_JS
-  </ul>
-- sử dụng bootstrap 4, font-awesome
+## Bài toán Todo-List: danh sách công việc
+** Một số chức năng yêu cầu:**
+<ul>
+  <li> Thêm việc </li>
+  <li> Check hoàn thành</li>
+  <li> Xóa việc </li>
+  <li> Phân loại: đã hoàn thành, đang làm </li>
+  <li> Xóa tất cả , check tất cả việc </li>
+</ul>
+Thực hiện  bởi: Dương Minh Nam
+## Liên Kết
+<ul> [JQUERY](https://duongnam99.github.io/ToDoList-DuongMinhNam/USING_JQUERY/) </ul>
+<ul> [NON-JQUERY](https://duongnam99.github.io/ToDoList-DuongMinhNam/USING_JS/) </ul>
+## Kiến thức nắm được
