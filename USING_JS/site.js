@@ -180,6 +180,9 @@
 	 			li[i].classList.add('checked');
 	 			
 	 		}
+	 		//SHOW ALL
+	 		show(document.querySelectorAll('.row.job'));
+	 		
 	 		number_active = 0;
 	 		document.querySelector('.number_active').textContent = number_active; 
 	 		number_complete = document.querySelectorAll('li').length;
@@ -189,6 +192,7 @@
  			for (var i = 0; i < li.length ; i++) {
 	 			li[i].classList.remove('checked');
 	 		}
+	 		show(document.querySelectorAll('.row.job'));
 	 		number_active = document.querySelectorAll('li').length;
 	 		document.querySelector('.number_active').textContent = number_active; 
 	 		number_complete = 0;

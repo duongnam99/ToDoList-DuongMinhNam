@@ -143,6 +143,8 @@
 	 		for (var i = 1; i <= $('li').length ; i++) {
 	 			$('ul li:nth-child('+i+')').addClass('checked');
 	 		}
+	 		//SHOW ALL
+	 		$('ul li, .nutxoa').show();
 	 		if($('ul li').hasClass('checked')){
 	 			$('.clear').removeClass('hide_clear_button');
 	 		}else{
@@ -156,6 +158,8 @@
  			for (var i = 1; i <= $('li').length ; i++) {
 	 			$('ul li:nth-child('+i+')').removeClass('checked');
 	 		}
+	 		//SHOW ALL
+	 		$('ul li, .nutxoa').show();
 	 		if($('ul li').hasClass('checked')){
 	 			$('.clear').removeClass('hide_clear_button');
 	 		}else{
