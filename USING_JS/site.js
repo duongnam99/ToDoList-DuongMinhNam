@@ -26,7 +26,6 @@
  	// TRIGGER ENTER INPUT TEXT
  	var input = document.getElementById("myInput");
 	input.addEventListener("keypress", function(event) {
-		
 		if (event.keyCode === 13) {
 			event.preventDefault();
 	       	click_add();
@@ -34,7 +33,6 @@
 	   	}
 
 	});
-
 
  	// FUNCTION CHECK CLASS IN LIST ELEMENT
  	function hasClass(element, className) {
