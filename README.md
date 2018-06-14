@@ -1,5 +1,5 @@
 ## Bài toán Todo-List: danh sách công việc
-** Một số chức năng yêu cầu:**
+**Một số chức năng yêu cầu: **
 <ul>
   <li> Thêm việc </li>
   <li> Check hoàn thành</li>
