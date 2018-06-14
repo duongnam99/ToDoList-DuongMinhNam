@@ -142,6 +142,10 @@
 	 		}else{
 	 			$('.clear').addClass('hide_clear_button');
  			}	
+ 			number_active = 0;
+ 			number_complete = $('li').length;
+ 			$('.number_active').text(number_active);
+ 			$('.number_complete').text(number_complete);
  		}else{
  			for (var i = 1; i <= $('li').length ; i++) {
 	 			$('ul li:nth-child('+i+')').removeClass('checked');
@@ -151,6 +155,10 @@
 	 		}else{
 	 			$('.clear').addClass('hide_clear_button');
  			}	
+ 			number_active = $('li').length;
+ 			number_complete = 0
+ 			$('.number_active').text(number_active);
+ 			$('.number_complete').text(number_complete);
  		}
 	});
 	//TOOL TIPS
