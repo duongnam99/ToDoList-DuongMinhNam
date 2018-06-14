@@ -151,7 +151,12 @@
 		remove_all_button_color();
  		document.querySelector('.all').classList.add('button_color');
 
+		number_job -= number_complete;
+ 		number_complete = 0;
+ 		document.querySelector('.number_job').textContent = number_job; 
+ 		document.querySelector('.number_complete').textContent = number_complete; 
  		clear(document.querySelectorAll('li'), 'checked');
+
 
 	})
 	//CHECK ALL
