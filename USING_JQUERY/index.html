@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<title> To do list </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
+	<script type="text/javascript" src="vendor/bootstrap.js"></script>
+ 	<script type="text/javascript" src="site.js"></script>
+	<link rel="stylesheet" href="vendor/bootstrap.css">
+	<link rel="stylesheet" href="vendor/font-awesome.css">
+ 	<link rel="stylesheet" href="1.css">
+</head>
+<body >
+ 	<div class="container">
+ 		<div class="row">
+ 			<div class="col-sm-8 push-sm-2">
+ 				<hr>
+ 					<h3>To do list của Minh Nam</h3>
+ 					<form>
+ 						<fieldset class="form-group">
+ 							<input type="text" class="form-control" id="myInput" placeholder="Title...">
+ 						</fieldset>
+ 						<fieldset class="form-group">
+ 							<input type="button" class="form-control btn-outline-success add" value="Add">
+ 						</fieldset>
+ 					</form>
+ 			</div>
+ 		</div>
+ 		<div class="row">
+ 			<div class="col-sm-7 push-sm-2">
+ 				<ul>
+ 					<li>nam</li>
+ 					<li>minh nam</li>
+ 					<li>duong minh nam</li>
+ 				</ul>
+ 			</div>
+ 			<div class="col-sm-1 push-sm-2 xoa">
+ 				<button class="nutxoa"><i class="fa fa-remove"></i></button>
+ 				<button class="nutxoa"><i class="fa fa-remove"></i></button>
+ 				<button class="nutxoa"><i class="fa fa-remove"></i></button>
+ 			</div>
+ 		</div>
+ 		<div class="row buttons">
+ 			<div class="col-sm-1 push-sm-2">
+ 				<button class="button all button_color"> All: <span class="number_job">3</span></button> 
+ 			</div>
+ 			<div class="col-sm-2 push-sm-2">
+ 				<button class="button active">Active: <span class="number_active">3</span></button>
+ 			</div>
+ 			<div class="col-sm-2 push-sm-2">
+ 				<button class="button complete">Complete: <span class="number_complete">0</span></button> 
+ 			</div>
+ 			<div class="col-sm-2 push-sm-2">
+ 				<button class="button clear hide_clear_button">Clear Completed</button> 
+ 			</div>
+ 			<div class="col-sm-1 push-sm-2">
+ 				<button class="button check_all"> <i class="fa fa-check"></i></button> 
+ 			</div>
+ 		</div>
+	</div>
+
+</body>
+</html>
