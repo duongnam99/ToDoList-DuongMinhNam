@@ -23,3 +23,5 @@
   <ul> Các phương thức, các hàm, sự kiện trong js/jquery để truy xuất, thao tác với object </ul>
 ## Tính năng phát triển thêm:
   <ul> Bộ đếm các thành phần công việc: hoàn thành, đang làm  </ul>
+## Credit
+Framework hỗ trợ: bootstrap 4
