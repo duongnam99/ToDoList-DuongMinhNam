@@ -5,7 +5,14 @@
 
  	function click_add(){
  		var Title = document.getElementById("myInput").value;
- 		if(Title != ''){
+ 		var a = 0;
+ 		for (var i = 0; i < Title.length; i++) {
+			if(Title[i] == ' '){
+				a += 1;
+			}
+		}
+		// CHECK INPUT NOT IS THE STRING ONLY CONTAIN SPACE
+ 		if(Title.length != a){
  			var div = document.createElement('div');
  			document.querySelector('ul').appendChild(div);
  			div.classList.add('row','job');

@@ -5,7 +5,13 @@
 
  	function click_add(){
 		var Title = $('#myInput').val();
- 		if(Title != ''){
+		var a = 0;
+		for (var i = 0; i < Title.length; i++) {
+			if(Title[i] == ' '){
+				a += 1;
+			}
+		}
+ 		if(a != Title.length){
  			$('ul').append('<li>'+Title+'</li>');
 	 		$('.xoa').append('<button class="nutxoa"><i class="fa fa-remove"></i></button>');
 	 		$('#myInput').val('');
