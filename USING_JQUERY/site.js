@@ -1,5 +1,4 @@
 ﻿$(function(){
-
  	var number_job = $('li').length;
  	var number_complete;
  	var number_active = number_job;
@@ -153,6 +152,10 @@
 	 			$('.clear').addClass('hide_clear_button');
  			}	
  		}
+	});
+	//TOOL TIPS
+	$(document).ready(function(){
+    	$('[data-toggle="tooltip"]').tooltip();   
 	});
 })  
 
