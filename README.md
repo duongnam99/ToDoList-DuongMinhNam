@@ -17,7 +17,7 @@
   - Properties của HTML elements 
   - Methods để truy cập đến tất cả HTML elements 
   - Events cho tất cả HTML elements 
-- Các phương thức, các hàm, sự kiện trong js/jquery để truy xuất, thao tác với object 
+- **Các phương thức, các hàm, sự kiện** trong js/jquery để truy xuất, thao tác với object
 ## Tính năng phát triển thêm:  
 - Bộ đếm các thành phần công việc: hoàn thành, đang làm 
 ## Credit  
