@@ -2,7 +2,16 @@
 	var number_job = document.querySelectorAll('li').length;
  	var number_complete = document.querySelectorAll('li').length;
  	var number_active = number_job;
+ 	// TRIGGER ENTER INPUT TEXT
+ 	var input = document.getElementById("myInput");
+	input.addEventListener("keypress", function(event) {
+		if (event.keyCode === 13) {
+			event.preventDefault();
+	       	click_add();
+	       	// return false;
+	   	}
 
+	});
  	function click_add(){
  		var Title = document.getElementById("myInput").value;
  		var a = 0;
@@ -26,71 +35,12 @@
 	 	 	document.querySelector('.number_active').textContent = number_active;
  		}
  	}
- 	//handle add event
- 	document.querySelector('.add').addEventListener('click', function(){
- 		click_add();
- 	})
- 	// TRIGGER ENTER INPUT TEXT
- 	var input = document.getElementById("myInput");
-	input.addEventListener("keypress", function(event) {
-		if (event.keyCode === 13) {
-			event.preventDefault();
-	       	click_add();
-	       	// return false;
-	   	}
-
-	});
-
- 	// FUNCTION CHECK CLASS IN LIST ELEMENT
- 	function hasClass(element, className) {
- 		var a = 0;
- 		for (var i = 0; i < element.length; i++) {
- 			if((' ' + element[i].className + ' ').indexOf(' ' + className+ ' ') > -1){ // classes split by space: ' '
- 				a += 1;
- 			} 
- 		}
- 		if(a == 0){ 
- 			return false;
- 		}else{
- 			return true;
- 		}
+ 	function set_text_complete_active_all(){
+		document.querySelector('.number_complete').textContent = number_complete; 
+	 	document.querySelector('.number_active').textContent = number_active; 
+	 	document.querySelector('.number_job').textContent = number_job;
 	}
-	function show_clear_button(){
-		if(hasClass(document.querySelectorAll('li'), 'checked') == true){
-   			document.querySelector('.clear').classList.remove('hide_clear_button');
-  		}else if(hasClass(document.querySelectorAll('li'), 'checked') == false){
-  			document.querySelector('.clear').classList.add('hide_clear_button');
-  		}
-	}
- 	//HANDLE CLICK 'li' ELEMENT EVENT
- 	var list = document.querySelector('ul');
-	list.addEventListener('click', function(ev) {
-  	if (ev.target.tagName === 'LI') {
-  		// show "li" color
-  		ev.target.classList.toggle('checked');
-  		//show clear button:
-  		show_clear_button()
-		//number of compeleted job
- 		number_complete = document.querySelectorAll('.checked').length;	
- 	 	document.querySelector('.number_complete').textContent = number_complete;
- 		// // number of active job
- 		number_active = number_job - number_complete;
- 	 	document.querySelector('.number_active').textContent = number_active;
- 	 }
-	});
-	// DELETE JOB
- 	var deletebutton = document.querySelector('ul'); //select parent, addEventListener: children
- 	deletebutton.addEventListener('click', function(ev){
- 		if(ev.target.tagName === 'BUTTON'){
- 			//delete job, number_job -1
- 			ev.target.parentElement.remove();
- 			number_job -= 1;
-
- 	 		document.querySelector('.number_job').textContent = number_job;
- 		}
- 	})
-
- 	function remove_all_button_color(){
+	function remove_all_button_color(){
  		var button = document.querySelectorAll('.button');
  		for (var i = 0; i < button.length; i++) {
  			button[i].classList.remove('button_color');
@@ -116,7 +66,6 @@
  		var i = element.length -1;
  		while(i <= element.length -1 && i >=0){
  			if((' ' + element[i].className + ' ').indexOf(' ' + className + ' ') > -1){ // classes split by space: ' '
- 				console.log('nam');
  				document.querySelector('ul').removeChild(element[i].parentElement); 
  			} 
  			i--;
@@ -134,6 +83,59 @@
  			element[i].classList.remove('hide');
  		}
 	}
+	// FUNCTION CHECK CLASS IN LIST ELEMENT
+	function hasClass(element, className) {
+ 		var a = 0;
+ 		for (var i = 0; i < element.length; i++) {
+ 			if((' ' + element[i].className + ' ').indexOf(' ' + className+ ' ') > -1){ // classes split by space: ' '
+ 				a += 1;
+ 			} 
+ 		}
+ 		if(a == 0){ 
+ 			return false;
+ 		}else{
+ 			return true;
+ 		}
+	}
+	function show_clear_button(){
+		if(hasClass(document.querySelectorAll('li'), 'checked') == true){
+   			document.querySelector('.clear').classList.remove('hide_clear_button');
+  		}else if(hasClass(document.querySelectorAll('li'), 'checked') == false){
+  			document.querySelector('.clear').classList.add('hide_clear_button');
+  		}
+	}
+ 	//handle add event
+ 	document.querySelector('.add').addEventListener('click', function(){
+ 		click_add();
+ 	})
+ 	
+ 	//HANDLE CLICK 'li' ELEMENT EVENT
+ 	var list = document.querySelector('ul');
+	list.addEventListener('click', function(ev) {
+  	if (ev.target.tagName === 'LI') {
+  		// show "li" color
+  		ev.target.classList.toggle('checked');
+  		show_clear_button()
+ 		number_complete = document.querySelectorAll('.checked').length;	
+ 		number_active = number_job - number_complete;
+ 		set_text_complete_active_all();
+ 	 }
+	});
+	// DELETE JOB
+ 	var deletebutton = document.querySelector('ul'); //select parent, addEventListener: children
+ 	deletebutton.addEventListener('click', function(ev){
+ 		if(ev.target.tagName === 'BUTTON'){
+ 			//delete job, number_job -1
+ 			ev.target.parentElement.remove();
+ 			number_job -= 1;
+ 			if((' ' + ev.target.parentElement.children[0].className + ' ').indexOf(' ' + 'checked'+ ' ') > -1){ number_complete -= 1 }
+			else{ number_active -= 1 }
+ 			
+ 		set_text_complete_active_all();
+ 	 
+ 		}
+ 	})
+
  	document.querySelector('.active').addEventListener('click', function(){
  		remove_all_button_color();
  		this.classList.add('button_color');
@@ -167,6 +169,7 @@
  		clear(document.querySelectorAll('li'), 'checked');
 
 	})
+	
 	//CHECK ALL
 	var clicks = 0;
 	document.querySelector('.check_all').addEventListener('click', function(){
@@ -178,15 +181,13 @@
  		if( clicks %2 == 1){
 	 		for (var i = 0; i < li.length ; i++) {
 	 			li[i].classList.add('checked');
-	 			
 	 		}
 	 		//SHOW ALL
 	 		show(document.querySelectorAll('.row.job'));
 	 		
 	 		number_active = 0;
-	 		document.querySelector('.number_active').textContent = number_active; 
 	 		number_complete = document.querySelectorAll('li').length;
-	 		document.querySelector('.number_complete').textContent = number_complete; 
+	 		set_text_complete_active_all();
 	 		show_clear_button();
  		}else{
  			for (var i = 0; i < li.length ; i++) {
@@ -194,9 +195,8 @@
 	 		}
 	 		show(document.querySelectorAll('.row.job'));
 	 		number_active = document.querySelectorAll('li').length;
-	 		document.querySelector('.number_active').textContent = number_active; 
 	 		number_complete = 0;
-	 		document.querySelector('.number_complete').textContent = number_complete; 
+	 		set_text_complete_active_all();
 	 		show_clear_button();
  		}
 	})
